@@ -25,7 +25,7 @@ public class RacketPawn : MonoBehaviour
     {
         if (RacketMovementForce != null)
         {
-            Vector3 Rmovement = -playerRacketMovement.forward; // new Vector3(0, 0, -movementForces.position.z);
+            Vector3 Rmovement = new Vector3(0, 0, -RacketMovementForce.position.z);
 
             RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
         }
@@ -41,7 +41,7 @@ public class RacketPawn : MonoBehaviour
     {
         if (RacketMovementForce != null)
         {
-            Vector3 Rmovement = playerRacketMovement.forward;  // new Vector3(0, 0, movementForces.position.z);
+            Vector3 Rmovement = new Vector3(0, 0, RacketMovementForce.position.z);
 
             RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
         }
@@ -57,7 +57,7 @@ public class RacketPawn : MonoBehaviour
     {
         if (RacketMovementForce != null)
         {
-            Vector3 Rmovement = playerRacketMovement.right;// new Vector3(-movementForces.position.x, 0, 0);
+            Vector3 Rmovement = new Vector3(-RacketMovementForce.position.x, 0, 0);
 
             RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
         }
@@ -73,7 +73,7 @@ public class RacketPawn : MonoBehaviour
     {
         if (RacketMovementForce != null)
         {
-            Vector3 Rmovement = -playerRacketMovement.right; // new Vector3(movementForces.position.x, 0, 0);
+            Vector3 Rmovement = new Vector3(RacketMovementForce.position.x, 0, 0);
 
             RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
         }
