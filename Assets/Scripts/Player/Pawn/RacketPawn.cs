@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPawnInput : MonoBehaviour
+public class RacketPawn : MonoBehaviour
 {
-    // Declared variables and classes
-    public Rigidbody movementForces;
-    private Transform playerMovement;
+    public Rigidbody RacketMovementForce;
+    public Transform playerRacketMovement;
 
     public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        movementForces = GetComponent<Rigidbody>();
-        playerMovement = GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
@@ -25,11 +23,11 @@ public class PlayerPawnInput : MonoBehaviour
 
     public void MoveUp()
     {
-        if (movementForces != null)
+        if (RacketMovementForce != null)
         {
-            Vector3 movement = -playerMovement.forward; // new Vector3(0, 0, -movementForces.position.z);
+            Vector3 Rmovement = -playerRacketMovement.forward; // new Vector3(0, 0, -movementForces.position.z);
 
-            movementForces.AddForce(movement * speed * Time.deltaTime);
+            RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
@@ -41,11 +39,11 @@ public class PlayerPawnInput : MonoBehaviour
     }
     public void MoveDown()
     {
-        if (movementForces != null)
+        if (RacketMovementForce != null)
         {
-            Vector3 movement = playerMovement.forward;  // new Vector3(0, 0, movementForces.position.z);
+            Vector3 Rmovement = playerRacketMovement.forward;  // new Vector3(0, 0, movementForces.position.z);
 
-            movementForces.AddForce(movement * speed * Time.deltaTime);
+            RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
@@ -57,11 +55,11 @@ public class PlayerPawnInput : MonoBehaviour
     }
     public void MoveLeft()
     {
-        if (movementForces != null)
+        if (RacketMovementForce != null)
         {
-            Vector3 movement = playerMovement.right;// new Vector3(-movementForces.position.x, 0, 0);
+            Vector3 Rmovement = playerRacketMovement.right;// new Vector3(-movementForces.position.x, 0, 0);
 
-            movementForces.AddForce(movement * speed * Time.deltaTime);
+            RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
@@ -73,11 +71,11 @@ public class PlayerPawnInput : MonoBehaviour
     }
     public void MoveRight()
     {
-        if (movementForces != null)
+        if (RacketMovementForce != null)
         {
-            Vector3 movement = -playerMovement.right; // new Vector3(movementForces.position.x, 0, 0);
+            Vector3 Rmovement = -playerRacketMovement.right; // new Vector3(movementForces.position.x, 0, 0);
 
-            movementForces.AddForce(movement * speed * Time.deltaTime);
+            RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
