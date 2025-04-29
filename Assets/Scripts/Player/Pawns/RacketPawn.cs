@@ -25,9 +25,13 @@ public class RacketPawn : MonoBehaviour
     {
         if (RacketMovementForce != null)
         {
-            Vector3 Rmovement = new Vector3(0, 0, -RacketMovementForce.position.z);
+            // Vector3 Rmovement = new Vector3(0, 0, -RacketMovementForce.position.z);
 
-            RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
+            Vector3 Rmovement = -transform.up;
+
+            // RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
+
+            transform.position = transform.position + (Rmovement * speed * Time.deltaTime); 
         }
         // if (audioSource != null)
         {
@@ -41,9 +45,13 @@ public class RacketPawn : MonoBehaviour
     {
         if (RacketMovementForce != null)
         {
-            Vector3 Rmovement = new Vector3(0, 0, RacketMovementForce.position.z);
+            // Vector3 Rmovement = new Vector3(0, 0, RacketMovementForce.position.z);
 
-            RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
+            Vector3 Rmovement = transform.up;
+
+            // RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
+
+            transform.position = transform.position + (Rmovement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
@@ -57,9 +65,13 @@ public class RacketPawn : MonoBehaviour
     {
         if (RacketMovementForce != null)
         {
-            Vector3 Rmovement = new Vector3(-RacketMovementForce.position.x, 0, 0);
+            // Vector3 Rmovement = new Vector3(-RacketMovementForce.position.x, 0, 0);
 
-            RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
+            Vector3 Rmovement = -transform.right;
+
+            // RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
+
+            transform.position = transform.position + (Rmovement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
@@ -73,9 +85,13 @@ public class RacketPawn : MonoBehaviour
     {
         if (RacketMovementForce != null)
         {
-            Vector3 Rmovement = new Vector3(RacketMovementForce.position.x, 0, 0);
+            // Vector3 Rmovement = new Vector3(RacketMovementForce.position.x, 0, 0);
 
-            RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
+            Vector3 Rmovement = transform.right;
+
+            // RacketMovementForce.AddForce(Rmovement * speed * Time.deltaTime);
+
+            transform.position = transform.position + (Rmovement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
