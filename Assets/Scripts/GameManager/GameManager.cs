@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int score = 0;
-
+    public static GameManager instance;
     public GameObject player;
 
-    // Scording System
+    // Scoring System
+    public int score = 0;
     private int scoring = 15;
-    private int maxscore = 55;
+    private int maxscore = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     public void AddTennisScore()
     {
         scoring++;
@@ -32,12 +37,9 @@ public class GameManager : MonoBehaviour
 
     public void GameEnd()
     {
-        maxscore = score;
-    }
-
-    private void DestroyObject() 
-    {
-        Destroy(player);
-        AddTennisScore();
+        if (score > maxscore)
+        { 
+            score = maxscore;
+        }
     }
 }
