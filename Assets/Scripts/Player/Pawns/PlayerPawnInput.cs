@@ -26,13 +26,14 @@ public class PlayerPawnInput : MonoBehaviour
     {
         if (movementForces != null)
         {
-            // Vector3 movement = playerMovement.forward; // new Vector3(0, 0, movementForces.position.z);
+            Vector3 movement = new Vector3(0, 0, movementForces.position.z);
 
-            Vector3 movement = transform.forward;
+            // Vector3 movement = transform.forward;
+            // playerMovement.forward;
 
-            // movementForces.AddForce(movement * speed * Time.deltaTime);
+            movementForces.AddForce(movement * speed * Time.deltaTime);
 
-            transform.position = transform.position + (movement * speed * Time.deltaTime);
+            // transform.position = transform.position + (movement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
@@ -46,13 +47,14 @@ public class PlayerPawnInput : MonoBehaviour
     {
         if (movementForces != null)
         {
-            // Vector2 movement = -playerMovement.forward; // new Vector3(0, 0, -movementForces.position.z);
+            Vector3 movement = new Vector3(0, 0, -movementForces.position.z);
 
-            Vector3 movement = -transform.forward;
+            // Vector3 movement = -transform.forward;
+            // -playerMovement.forward; 
 
-            // movementForces.AddForce(movement * speed * Time.deltaTime);
+            movementForces.AddForce(movement * speed * Time.deltaTime);
 
-            transform.position = transform.position + (movement * speed * Time.deltaTime);
+            // transform.position = transform.position + (movement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
@@ -66,13 +68,14 @@ public class PlayerPawnInput : MonoBehaviour
     {
         if (movementForces != null)
         {
-            // Vector3 movement = -playerMovement.right; // new Vector3(-movementForces.position.x, 0, 0);
+            Vector3 movement = new Vector3(-movementForces.position.x, 0, 0);
 
-            Vector3 movement = -transform.right;
+            // Vector3 movement = -transform.right;
+            //-playerMovement.right;
 
-            // movementForces.AddForce(movement * speed * Time.deltaTime);
+            movementForces.AddForce(movement * speed * Time.deltaTime);
 
-            transform.position = transform.position + (movement * speed * Time.deltaTime);
+            // transform.position = transform.position + (movement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {
@@ -86,13 +89,14 @@ public class PlayerPawnInput : MonoBehaviour
     {
         if (movementForces != null)
         {
-            // Vector3 movement = playerMovement.right; // new Vector3(movementForces.position.x, 0, 0);
+            Vector3 movement = new Vector3(movementForces.position.x, 0, 0);
 
-            Vector3 movement = transform.right;
+            // Vector3 movement = transform.right;
+            // playerMovement.right;
 
-            // movementForces.AddForce(movement * speed * Time.deltaTime);
+            movementForces.AddForce(movement * speed * Time.deltaTime);
 
-            transform.position = transform.position + (movement * speed * Time.deltaTime);
+            // transform.position = transform.position + (movement * speed * Time.deltaTime);
         }
         // if (audioSource != null)
         {

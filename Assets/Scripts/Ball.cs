@@ -7,17 +7,17 @@ public class Ball : MonoBehaviour
 {
 
     // Start is called before the first frame update
-    void Start()
-    {
-        // Debug.Log("start");
-        //OnContactWithPlayer(collision);
-    }
+    //void Start()
+    //{
+    //    // Debug.Log("start");
+    //    //OnContactWithPlayer(collision);
+    //}
 
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
 
-    }
+    //}
 
     //public void OnContactWithPlayer(Collision collision)
     //{
@@ -29,9 +29,9 @@ public class Ball : MonoBehaviour
     //    }
     //}
 
-    public void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter(Collider collider)
     {
-        PlayerDeath died = collision.GetComponent<PlayerDeath>();
+        PlayerDeath died = collider.GetComponent<PlayerDeath>();
 
         if (died != null)
         {
