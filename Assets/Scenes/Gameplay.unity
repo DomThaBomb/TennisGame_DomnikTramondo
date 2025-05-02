@@ -1252,7 +1252,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1270,10 +1270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a19ff52dd24a842a14e74098ca90ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1708490528}
-  BallForce: {fileID: 1135726166}
-  BallTransformMovement: {fileID: 1135726161}
   speed: 1
+  DamageDone: 0
 --- !u!1 &1313965044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,6 +1678,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1708490546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708490528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a19ff52dd24a842a14e74098ca90ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  DamageDone: 0
 --- !u!1 &1789903123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,7 +1744,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2169,6 +2181,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 209365343061388015, guid: 33c883eba3557334587d83df436c4f6d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1708490540}
+    - targetCorrespondingSourceObject: {fileID: 209365343061388015, guid: 33c883eba3557334587d83df436c4f6d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1708490546}
   m_SourcePrefab: {fileID: 100100000, guid: 33c883eba3557334587d83df436c4f6d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
-    public GameObject player;
-    public Rigidbody BallForce;
-    public Transform BallTransformMovement;
-    public int speed;
 
     // Start is called before the first frame update
     void Start()
@@ -18,24 +14,29 @@ public class Ball : MonoBehaviour
     }
 
     // Update is called once per frame
-    //void Update()
-    //{
-
-    //}
-
-    public void OnContactWithPlayer(Collision collision)
+    void Update()
     {
-        PlayerPawnInput player = collision.gameObject.GetComponent<PlayerPawnInput>();
 
-        if (collision != null)
-        {
-            Destroy(player);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
-        }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    //public void OnContactWithPlayer(Collision collision)
+    //{
+    //    PlayerDeath player = collision.GetComponent<PlayerDeath>();
+
+    //    if (player != null)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+
+    public void OnTriggerEnter(Collider collision)
     {
-        OnContactWithPlayer (collision);
+        PlayerDeath died = collision.GetComponent<PlayerDeath>();
+
+        if (died != null)
+        {
+            died.Dead();
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        }
     }
 }
